@@ -11,28 +11,50 @@
     <h1>Rent Mountaineering Equipment</h1>
   </header>
 
-  <section class="filters">
-    <label for="typeFilter">Type:</label>
-    <select id="typeFilter">
-      <option value="all">All</option>
-      <option value="jacket">Jackets</option>
-      <option value="boots">Boots</option>
-      <option value="carabiner">Carabiners</option>
-    </select>
+<section class="filters">
+  <label for="searchInput">Search:</label>
+  <input type="text" id="searchInput" placeholder="Search by name..." />
 
-    <label for="sizeFilter">Size:</label>
-    <select id="sizeFilter">
-      <option value="all">All</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="N/A">N/A</option>
-    </select>
-  </section>
+  <label for="typeFilter">Type:</label>
+  <select id="typeFilter">
+    <option value="all">All</option>
+    <option value="jacket">Jackets</option>
+    <option value="boots">Boots</option>
+    <option value="carabiner">Carabiners</option>
+  </select>
 
-  <main id="equipment-list">
-    <!-- Items will be injected here -->
-  </main>
+  <label for="sizeFilter">Size:</label>
+  <select id="sizeFilter">
+    <option value="all">All</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="N/A">N/A</option>
+  </select>
+
+  <label for="availabilityFilter">Availability:</label>
+  <select id="availabilityFilter">
+    <option value="all">All</option>
+    <option value="available">Available</option>
+    <option value="unavailable">Unavailable</option>
+  </select>
+</section>
+
+
+  <main id="equipment-list"></main>
+
+  <!-- Item Details Modal -->
+  <div id="itemModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modalImage" />
+      <h2 id="modalTitle"></h2>
+      <p id="modalType"></p>
+      <p id="modalSize"></p>
+      <p id="modalPrice"></p>
+      <button id="rentButton">Rent This Item</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
