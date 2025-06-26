@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "North Peak Parka",
+    "size": "M",
+    "pricePerDay": 15,
+    "image": "https://example.com/jacket1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Urban Raincoat",
+    "size": "L",
+    "pricePerDay": 12,
+    "image": "https://example.com/jacket2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Mountain Explorer",
+    "size": "S",
+    "pricePerDay": 18,
+    "image": "https://example.com/jacket3.jpg"
+  }
+]
