@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Alpine Jacket",
+    "type": "jacket",
+    "size": "M",
+    "pricePerDay": 20,
+    "image": "https://example.com/jacket.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Summit Boots",
+    "type": "boots",
+    "size": "L",
+    "pricePerDay": 25,
+    "image": "https://example.com/boots.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Steel Carabiner",
+    "type": "carabiner",
+    "size": "N/A",
+    "pricePerDay": 5,
+    "image": "https://example.com/carabiner.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Lightweight Jacket",
+    "type": "jacket",
+    "size": "S",
+    "pricePerDay": 18,
+    "image": "https://example.com/jacket2.jpg"
+  }
+]

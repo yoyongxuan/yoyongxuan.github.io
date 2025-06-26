@@ -1,22 +1,53 @@
+let gearData = [];
+
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('jackets.json')
-    .then(response => response.json())
-    .then(data => displayJackets(data))
-    .catch(error => console.error('Error loading jackets:', error));
+  fetch('gear.json')
+    .then(res => res.json())
+    .then(data => {
+      gearData = data;
+      renderItems(gearData);
+      document.getElementById('typeFilter').addEventListener('change', applyFilters);
+      document.getElementById('sizeFilter').addEventListener('change', applyFilters);
+    })
+    .catch(err => console.error('Failed to load gear data:', err));
 });
 
-function displayJackets(jackets) {
-  const list = document.getElementById('jacket-list');
+function renderItems(items) {
+  const container = document.getElementById('equipment-list');
+  container.innerHTML = '';
 
-  jackets.forEach(jacket => {
+  if (items.length === 0) {
+    container.innerHTML = '<p>No items match the filters.</p>';
+    return;
+  }
+
+  items.forEach(item => {
     const div = document.createElement('div');
-    div.className = 'jacket';
+    div.className = 'item';
     div.innerHTML = `
-      <img src="${jacket.image}" alt="${jacket.name}" />
-      <h3>${jacket.name}</h3>
-      <p><strong>Size:</strong> ${jacket.size}</p>
-      <p><strong>Price/Day:</strong> $${jacket.pricePerDay}</p>
+      <img src="${item.image}" alt="${item.name}">
+      <h3>${item.name}</h3>
+      <p><strong>Type:</strong> ${item.type}</p>
+      <p><strong>Size:</strong> ${item.size}</p>
+      <p><strong>Price/Day:</strong> $${item.pricePerDay}</p>
     `;
-    list.appendChild(div);
+    container.appendChild(div);
   });
+}
+
+function applyFilters() {
+  const type = document.getElementById('typeFilter').value;
+  const size = document.getElementById('sizeFilter').value;
+
+  let filtered = gearData;
+
+  if (type !== 'all') {
+    filtered = filtered.filter(item => item.type === type);
+  }
+
+  if (size !== 'all') {
+    filtered = filtered.filter(item => item.size === size);
+  }
+
+  renderItems(filtered);
 }
